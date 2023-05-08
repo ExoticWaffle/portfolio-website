@@ -3,7 +3,7 @@ import {Menu, Close} from '@mui/icons-material';
 import './Navbar.css';
 import { AppBar, Button, List, ListItemButton, Toolbar, Typography, Stack, Link} from '@mui/material';
 
-function Navbar() {
+function Navbar(props) {
   const [navbar, setNavbar] = useState(false);
   const [mobile, setMobile] = useState(window.innerWidth <= 960);
   const [menu, setMenu] = useState(false);
@@ -36,13 +36,19 @@ function Navbar() {
   window.addEventListener('scroll', changeBackground);
   window.addEventListener('resize', checkMobile);
 
+  const scroll = (element) => {
+    console.log("lol");
+    element.current.scrollIntoView({behavior: 'smooth'});
+    setMenu(false);
+  };
+
   const navButtons = (
-    <Stack sx={{height: "100%"}} direction={mobile ? "column" : "row"} spacing={mobile ? 0 : 2}>
-      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">About</Button>
-      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Works</Button>
-      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Skills</Button>
-      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Contact</Button>
-    </Stack>
+    <Stack sx={{height: "100%"}} direction={mobile ? "column" : "row"} spacing={mobile ? 0 : 4}>
+      <a className={mobile ? "menu-button" : "nav-button"} onClick={() => {scroll(props.home);}}>HOME</a>
+      <a className={mobile ? "menu-button" : "nav-button"} onClick={() => {scroll(props.about);}}>ABOUT</a>
+      <a className={mobile ? "menu-button" : "nav-button"} onClick={() => {scroll(props.projects);}}>PROJECTS</a>
+      <a className={mobile ? "menu-button" : "nav-button"} onClick={() => {scroll(props.contact);}}>CONTACT</a>
+    </Stack> 
   );
 
   const burgerMenu = (
@@ -51,7 +57,7 @@ function Navbar() {
     </div>
   )
 
-  const menuButton = (<Button onClick={toggleMenu} sx={{background: "transparent", color: "white"}}>{menu ? <Close sx={{mx: "-10px"}} /> : <Menu />}</Button>)
+  const menuButton = (<Button onClick={toggleMenu} sx={{background: "transparent", color: "white"}}>{menu ? <Close /> : <Menu />}</Button>)
 
   menu ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
 
@@ -62,8 +68,8 @@ function Navbar() {
             <Typography variant="h5" sx={{flex: 1}}>Leo Tremblay</Typography>
             {mobile ? menuButton : navButtons}
           </Toolbar>
-        </AppBar>
-        
+        </AppBar> 
+
         {menu ? burgerMenu : ""}
       </>
   )

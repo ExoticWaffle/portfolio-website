@@ -12,10 +12,13 @@
 }
 
 .nav-button {
+  font-size: 12pt;
+  width: 90px;
   text-decoration: none;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
   transition: border-bottom 0.1s ease;
   border-radius: 0px;
@@ -34,11 +37,22 @@
   width: 100%;
   z-index: 1;
   padding-top: 200px; 
-  color: white;
 } 
 
 .menu-button {
-   height: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  background: #111111;
+}
+
+.menu-button:active {
+  background-color: white;
+  color: black;
+  transition: background-color 0.5s ease;
 }
 
 .menu-button:hover {

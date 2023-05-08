@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
+
 function Header(props) {
     return (
         <>
@@ -20,9 +21,6 @@ const styles={
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-    },
-    name: {
-        
     }
 }
 
