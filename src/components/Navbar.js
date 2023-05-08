@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import {Menu, Close} from '@mui/icons-material';
 import './Navbar.css';
-import { AppBar, Button, List, ListItemButton, Toolbar, Typography, Stack, Link, Box} from '@mui/material';
+import { AppBar, Button, List, ListItemButton, Toolbar, Typography, Stack, Link} from '@mui/material';
 
 function Navbar() {
-
   const [navbar, setNavbar] = useState(false);
+  const [mobile, setMobile] = useState(window.innerWidth <= 960);
+  const [menu, setMenu] = useState(false);
 
   const changeBackground = () => {
-    if(window.scrollY >= 80) {
+    if(window.scrollY >= 80 || menu) {
       setNavbar(true);
     }
     else{
@@ -15,58 +17,68 @@ function Navbar() {
     }
   }
 
+  const checkMobile = () => {
+    if(window.innerWidth <= 960){
+      setMobile(true);
+    }
+    else{
+      setMobile(false);
+      setMenu(false);
+    }
+    
+  }
+
+  const toggleMenu = () => {
+    setMenu(!menu);
+    setNavbar(!menu)
+  }
+
   window.addEventListener('scroll', changeBackground);
+  window.addEventListener('resize', checkMobile);
+
+  const navButtons = (
+    <Stack sx={{height: "100%"}} direction={mobile ? "column" : "row"} spacing={mobile ? 0 : 2}>
+      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">About</Button>
+      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Works</Button>
+      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Skills</Button>
+      <Button className={mobile ? "menu-button" : "nav-button"} color="inherit">Contact</Button>
+    </Stack>
+  );
+
+  const burgerMenu = (
+    <div className="menu-container">
+      {navButtons}
+    </div>
+  )
+
+  const menuButton = (<Button onClick={toggleMenu} sx={{background: "transparent", color: "white"}}>{menu ? <Close sx={{mx: "-10px"}} /> : <Menu />}</Button>)
+
+  menu ? document.body.style.overflow = "hidden" : document.body.style.overflow = "auto";
 
   return (
       <>
-        <AppBar position="fixed" elevation={0} sx={navbar ? [styles.appbar, styles.appbarScroll] : styles.appbar}>
-          <Toolbar sx={styles.toolbar}>
+        <AppBar position="fixed" elevation={0} className="appbar" sx={navbar ? styles.scroll : styles.noScroll}>
+          <Toolbar className="toolbar">
             <Typography variant="h5" sx={{flex: 1}}>Leo Tremblay</Typography>
-            <Stack sx={{height: "100%"}} direction="row" spacing={2}>
-              <Button sx={styles.navButton} color="inherit">About</Button>
-              <Button sx={styles.navButton} color="inherit">Works</Button>
-              <Button sx={styles.navButton} color="inherit">Contact</Button>
-            </Stack>
+            {mobile ? menuButton : navButtons}
           </Toolbar>
-          
         </AppBar>
+        
+        {menu ? burgerMenu : ""}
       </>
   )
 }
 
 const styles={
-  appbar: {
-    px: "60px", 
-    height: "80px",
+  noScroll: {
     backgroundColor: "transparent",
     transition: "background-color 0.7s ease"
-    
   },
 
-  appbarScroll: {
+  scroll: {
     background: "rgba(0,0,0,0.8)",
-    backdropFilter: "blur(8px)"
-  },
-
-  toolbar: {
-    mx: "auto", 
-    width: "100%", 
-    height: "100%",
-    maxWidth: "1500px", 
-    justifyContent: "space-between",
-  },
-  navButton: {
-    textDecoration: "none",
-    boxSizing: "border-box",
-    display: "flex",
-    alignItems: "center",
-    height: "100%",
-    transition: "border-bottom 0.1s ease",
-    borderRadius: "0px",
-    "&:hover": {
-      borderBottom: "4px solid",
-      cursor: "pointer",
-    }
+    backdropFilter: "blur(8px)",
+    transition: "background-color 0.7s ease"
   }
 }
 

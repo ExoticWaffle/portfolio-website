@@ -1,180 +1,47 @@
-.navbar {
-    background: transparent;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
-    transition: background-color 0.7s ease;
-  }
-
-.navbar.active {
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(8px);
+.appbar {
+  padding: auto, 60px; 
+  height: 80px;
 }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    max-width: 100%;
-  }
-  
-  .navbar-name {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .fa-typo3 {
-    margin-left: 0.5rem;
-    font-size: 1.8rem;
-  }
-  
-  .nav-menu {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 80vw;
-    justify-content: end;
-    margin-right: 2rem;
-  }
-  
-  .nav-item {
-    height: 80px;
-  }
-  
-  .nav-links {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    height: 100%;
-  }
 
-  .nav-links::after {
-    content: '';
-    position: absolute;
-    width: 5%;
-    transform: scaleX(0);
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+.toolbar {
+  margin: auto; 
+  width: 100%; 
+  height: 100%;
+  max-width: 1500px; 
+  justify-content: space-between;
+}
 
-  }
-  
-  .nav-links:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-    
-  }
-  
-  .fa-bars {
-    color: #fff;
-  }
-  
-  .nav-links-mobile {
-    display: none;
-  }
-  
-  .menu-icon {
-    display: none;
-  }
-  
-  @media screen and (max-width: 960px) {
-    .NavbarItems {
-      position: relative;
-    }
-  
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 90vh;
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.5s ease;
-    }
-  
-    .nav-menu.active {
-      background: #242222;
-      left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-  
-    .nav-links {
-      text-align: center;
-      padding: 2rem;
-      width: 100%;
-      display: table;
-    }
-  
-    .nav-links:hover {
-      background-color: #fff;
-      color: #242424;
-      border-radius: 0;
-    }
-  
-    .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
-    }
-  
-    .menu-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-  
-    .fa-xmark {
-      color: #fff;
-      font-size: 2rem;
-    }
-  
-    .nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
-    }
-  
-    .nav-links-mobile:hover {
-      background: #fff;
-      color: #242424;
-      transition: 250ms;
-    }
-  }
+.nav-button {
+  text-decoration: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: border-bottom 0.1s ease;
+  border-radius: 0px;
+  color: white;
+}
+
+.nav-button:hover {
+  border-bottom: 4px solid;
+  cursor: pointer;
+}
+
+.menu-container {
+  height: 100vh;
+  background: #111111;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding-top: 200px; 
+  color: white;
+} 
+
+.menu-button {
+   height: 100px;
+}
+
+.menu-button:hover {
+  border: 4px solid;
+  transition: border 0.2s ease;
+}

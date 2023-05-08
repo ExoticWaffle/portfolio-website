@@ -1,30 +1,24 @@
-import { Box } from '@mui/material';
 import React from 'react';
 import '../../App.css';
-import About from '../About';
-import Header from '../Header';
+import About from '../sections/About';
+import Projects from '../sections/Projects';
+import Header from '../sections/Header';
+import Footer from '../sections/Footer';
+import './Home.css'
 function Home () {
     return (
       <>
-        <Box style={styles.container}>
-          <Header />
-          <About />
-        </Box>
+        <div className="background">
+        <Header />
+          <div className="body-container">
+            <About />
+            <Projects />
+          </div>
+          <Footer />
+        </div>
         
       </>
     );
-}
-
-const styles={
-  container: {
-    backgroundImage: `url("https://wallpapercave.com/wp/wp2418964.jpg")`,
-    backgroundColor: "rgba(0,0,0,0.5)",
-    backgroundBlendMode: "multiply",
-    backgroundSize: "cover",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  }
 }
 
 export default Home;
