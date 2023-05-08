@@ -2,9 +2,9 @@
     background-size: cover;
     max-width: 360px;
     width: 100%;
-    height: 240px;
+    min-height: 240px;
     border-radius: 30px;
-    margin: 5% 0;
+    margin: 5% 1%;
     box-shadow: 0 0 10px 10px #dddddd;
 }
 

@@ -37,6 +37,7 @@ function Navbar(props) {
   window.addEventListener('resize', checkMobile);
 
   const scroll = (element) => {
+    console.log(element.current)
     element.current.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'});
     setMenu(false);
   };

@@ -11,7 +11,7 @@ const Header = forwardRef((props, ref) => {
     return (
         <div style={styles.container} ref={ref}>
           <Typography variant={mobile ? "h3" : "h1"}>Leo Tremblay</Typography>
-          <Typography>I'm a programmer</Typography>
+          <Typography>I'm a programmer (I like to keep it broad)</Typography>
         </div>
   );
 });
