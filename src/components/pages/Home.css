@@ -1,0 +1,37 @@
+.body-container {
+    width: 75%;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.section-container{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} 
+
+.section-title{
+    border-bottom: 4px solid black;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 35pt;
+}
+
+.background {
+    background-image: url('../../../public/images/waffleRepeat.jpg');
+    background-color: rgba(0,0,0,0.5);
+    background-blend-mode: multiply;
+    background-size: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+  

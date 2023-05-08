@@ -1,0 +1,39 @@
+.card-container {
+    background-size: cover;
+    width: 360px;
+    height: 240px;
+    border-radius: 30px;
+    margin: 20px 10px;
+    box-shadow: 0 0 10px 10px #dddddd;
+}
+
+.info-container {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.card-button {
+    text-decoration: none;
+    font-size: 9pt;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}

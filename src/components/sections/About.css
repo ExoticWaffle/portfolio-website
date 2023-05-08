@@ -1,0 +1,17 @@
+.about-title {
+    background: black;
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+    width: 20%;
+    padding: 20px 0;
+    border-radius: 30px;
+}
+
+.about-text {
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
