@@ -14,14 +14,14 @@ function App() {
 
   return (
     <>
-    <Navbar home={home} about={about} projects={projects} contact={contact} />
-      <div className="background" ref={home}>
-        <Header  />
+      <div className="background">
+        <header className="navbar-container"><Navbar home={home} about={about} projects={projects} contact={contact} /></header>
+        <Header ref={home} />
           <div className="body-container">
             <About ref={about} />
             <Projects ref={projects} />
           </div>
-          <Footer ref={contact} />
+        <Footer ref={contact} />
       </div>
     </>
   );

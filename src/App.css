@@ -5,6 +5,10 @@
   font-family: Roboto, Helvetica, sans-serif
 }
 
+.navbar-container {
+  width: 100%;
+}
+
 .body-container {
   width: 75%;
   max-width: 1000px;

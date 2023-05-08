@@ -1,11 +1,11 @@
-import React from 'react';
+import {React, forwardRef} from 'react';
 import ProjectCard from '../ProjectCard';
 import Data from '../../data/ProjectData'
 import Stack from '@mui/material/Stack'
 
-function Projects(props) {
+const Projects = forwardRef((props, ref) => {
   return (
-    <div className="section-container">
+    <div className="section-container" ref={ref}>
         <h1 className="section-title">My projects</h1>
         <p style={{textAlign: "center"}}>Hover over an image to see more...</p>
         <Stack direction="row" flexWrap="wrap" justifyContent="center">
@@ -15,6 +15,6 @@ function Projects(props) {
         </Stack>
     </div>
   )
-}
+});
 
 export default Projects

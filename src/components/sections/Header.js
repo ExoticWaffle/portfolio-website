@@ -1,17 +1,15 @@
 import { Box, Typography } from '@mui/material';
-import React from 'react';
+import {React, forwardRef} from 'react';
 
 
-function Header(props) {
+const Header = forwardRef((props, ref) => {
     return (
-        <>
-          <Box style={styles.container}>
-            <Typography variant="h1">Leo Tremblay</Typography>
-            <Typography>I'm a programmer</Typography>
-          </Box>
-        </>
-    );
-}
+        <div style={styles.container} ref={ref}>
+          <Typography variant="h1">Leo Tremblay</Typography>
+          <Typography>I'm a programmer</Typography>
+        </div>
+  );
+});
 
 const styles={
     container: {

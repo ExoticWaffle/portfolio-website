@@ -1,10 +1,10 @@
-import React from 'react';
+import {React, forwardRef} from 'react';
 import {Phone, Email, GitHub, LinkedIn} from '@mui/icons-material'
 
 
-function Footer(props) {
+const Footer = forwardRef((props, ref) => {
     return (
-      <div style={styles.footerContainer}>
+      <div style={styles.footerContainer} ref={ref}>
         <div style={{width: "200px",margin: "auto"}}>
           <h3 style={{color: "white"}}>You can find me at:</h3>
           <a href="mailto: leo@tremblay.hk" style={styles.footerLink}><Email /> leo@tremblay.hk</a>
@@ -14,7 +14,7 @@ function Footer(props) {
       </div>
     );
 
-}
+});
 
 const styles = {
   footerContainer: {
