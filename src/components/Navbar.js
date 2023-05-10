@@ -52,7 +52,7 @@ function Navbar(props) {
   );
 
   const burgerMenu = (
-    <div className="menu-container">
+    <div className={menu ? "menu-container active" : "menu-container"}>
       {navButtons}
     </div>
   )
@@ -70,7 +70,7 @@ function Navbar(props) {
           </Toolbar>
         </AppBar> 
 
-        {menu ? burgerMenu : ""}
+        {burgerMenu}
       </>
   )
 }

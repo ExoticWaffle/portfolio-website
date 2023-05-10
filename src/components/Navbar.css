@@ -31,13 +31,21 @@
 }
 
 .menu-container {
-  height: 100vh;
+  height: 100%;
   background: #111111;
   position: fixed;
   width: 100%;
+  left: -100%;
   z-index: 1;
   padding-top: 200px; 
+  transition: all 0.5s ease;
 } 
+
+.menu-container.active {
+  left: 0;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
 
 .menu-button {
   height: 100px;
